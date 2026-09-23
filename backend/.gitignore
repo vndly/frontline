@@ -6,3 +6,8 @@ firebase-debug.*.log*
 
 # Firebase cache
 .firebase/
+
+# Custom
+!.vscode/
+!scripts/
+.env.remote
