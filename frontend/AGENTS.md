@@ -17,13 +17,14 @@ Frontline (Vite + Vue 3, TypeScript, Composition API with `<script setup>`, ESLi
 
 ## Reference Docs
 
+- `docs/game.md` — match authority, rules of play, lifecycle, and bots. Read before editing `src/match/` or `src/game/`.
 - `docs/typescript.md` — style, naming, imports, comment conventions. Read when editing TypeScript files.
 
 ## Workflow
 
 - **After completing code changes**: Run `npm run lint:fix` and fix remaining errors, run `npm run build` (typechecks first) and fix any failures, then run `/delta-review` before responding.
 - **No test suite**: This project has no tests by design. TypeScript and the type-aware lint rules are the safety net — do not weaken `strict` or `noUncheckedIndexedAccess`, and do not add `any` to silence an error.
-- **Doc Maintenance**: After changes, check if `AGENTS.md` and `docs/typescript.md` need updating. A rule that changes, or a new one, goes in the file that already holds its section: workflow, layering, tooling and deployment here, code conventions in `docs/typescript.md`.
+- **Doc Maintenance**: After changes, check if `AGENTS.md`, `docs/game.md`, and `docs/typescript.md` need updating. A rule that changes, or a new one, goes in the file that already holds its section: workflow, layering, tooling and deployment in `AGENTS.md`, match and rules in `docs/game.md`, code conventions in `docs/typescript.md`.
 
 ## Tooling
 

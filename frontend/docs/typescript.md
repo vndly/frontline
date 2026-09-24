@@ -3,8 +3,10 @@
 ## Style
 
 - Do not use semicolons
+- Do not use object shorthand: write `{code: code}`, not `{code}` (enforced by `object-shorthand: ['error', 'never']`)
+- Require curly braces for all control flow statements, even single-line blocks (enforced by `curly: ['error', 'all']`)
 - One class per file
-- Unused parameters: use `_`, `__`, `___`, etc.
+- Unused parameters: use `_`, `__`, `___`, etc. (enforced by `@typescript-eslint/no-unused-vars`)
 
 ## Naming
 
@@ -12,8 +14,8 @@
 - Classes, interfaces, type aliases: `PascalCase`
 - Functions: `camelCase`
 - Variables: full descriptive names, avoid abbreviations
-  - Allowed: `i`, `j` (loop counters), `x`, `y` (coordinates), `dx`, `dy` (deltas), `ctx` (canvas context)
-  - Avoid: `p` (player), `u` (unit), `el` (element), `m` (missile), etc.
+  - Allowed: `i`, `j` (loop counters)
+  - Avoid: `p` (player), `s` (state), `c` (code), `el` (element), `btn` (button), `msg` (message), etc.
 
 ## Types
 
@@ -52,15 +54,15 @@ class ClassName {
 methodName(paramName: string): number {
 ```
 
-**Field Level** — Inline end-of-line comment on first declaration:
+**Field Level** — Inline end-of-line comment on first declaration (no semicolons):
 
 ```typescript
-this.x = 0; // Current X position
-this.speed = config.speed; // Movement speed in units/second
+this.code = code // Active 4-character room code
+this.turnCount = 1 // 1-based turn counter
 ```
 
 **Code Block Level** — Plain comments for complex logic:
 
 ```typescript
-// Interpolate toward the authoritative position
+// Check expected turn count before advancing to prevent stale writes
 ```
